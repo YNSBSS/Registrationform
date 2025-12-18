@@ -1,43 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#6366f1" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1e293b" />
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Create your account and join our community. Secure, easy-to-use platform with 24/7 support." />
+    <meta name="keywords" content="signup, registration, account, user registration, create account" />
+    <meta name="author" content="Your Company Name" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourwebsite.com/" />
+    <meta property="og:title" content="Create Your Account - Welcome" />
+    <meta property="og:description" content="Join our community and unlock endless possibilities with our secure platform." />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.png" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://yourwebsite.com/" />
+    <meta name="twitter:title" content="Create Your Account - Welcome" />
+    <meta name="twitter:description" content="Join our community and unlock endless possibilities with our secure platform." />
+    <meta name="twitter:image" content="%PUBLIC_URL%/twitter-image.png" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png" />
+    
+    <!-- Manifest -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    
+    <!-- Preconnect to external resources for better performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Prevent auto-zoom on input focus for iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    
+    <title>Create Account | Welcome to Our Platform</title>
+    
+    <!-- Inline critical CSS to prevent flash of unstyled content -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        overflow: hidden;
+        background: #ffffff;
+      }
+      
+      #root {
+        min-height: 100vh;
+      }
+      
+      /* Loading screen */
+      .app-loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+      }
+      
+      .app-loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-top-color: white;
+        border-radius: 50%;
+        animation: app-spin 0.8s linear infinite;
+      }
+      
+      @keyframes app-spin {
+        to { transform: rotate(360deg); }
+      }
+      
+      /* Hide loading when React loads */
+      #root:not(:empty) + .app-loading {
+        display: none;
+      }
+    </style>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!-- Fallback for users with JavaScript disabled -->
+    <noscript>
+      <div style="display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; text-align: center; font-family: system-ui, sans-serif;">
+        <h1>Please enable JavaScript to use this application.</h1>
+      </div>
+    </noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <div class="app-loading">
+      <div class="app-loading-spinner"></div>
+    </div>
   </body>
-</html>
+</html> 
