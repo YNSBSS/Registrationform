@@ -255,7 +255,7 @@ const App = () => {
                 onChange={handleChange}
                 onBlur={() => handleBlur('name')}
                 className={`input-field ${touched.name && !nameValidation.length ? 'input-error' : ''}`}
-                placeholder={language === 'en' ? 'John Doe' : 'محمد أحمد'}
+                placeholder={language === 'en' ? 'Younes bss' : 'محمد أحمد'}
               />
               {touched.name && (
                 <div className="validation-hints-compact">
@@ -280,7 +280,7 @@ const App = () => {
                 onChange={handleChange}
                 onBlur={() => handleBlur('email')}
                 className={`input-field ${touched.email && !emailValidation.format ? 'input-error' : ''}`}
-                placeholder="john@example.com"
+                placeholder="younes@gmail.com"
               />
               {touched.email && !emailValidation.format && (
                 <div className="validation-hints-compact">
